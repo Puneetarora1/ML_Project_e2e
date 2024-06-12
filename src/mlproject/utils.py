@@ -10,15 +10,15 @@ import pypyodbc
 # import pickle
 import numpy as np
 
-load_dotenv()
+# load_dotenv()
 
-driver_name=os.getenv("driver_name")
-server_name=os.getenv("server_name")
-database_name=os.getenv('database_name')
+# driver_name=os.getenv("driver_name")
+# server_name=os.getenv("server_name")
+# database_name=os.getenv('database_name')
 
-# driver_name = 'SQL Server'
-# server_name = 'Puneet\\PUNEETSQL'
-# database_name = 'ML Project Datasets'
+driver_name = 'SQL Server'
+server_name = 'Puneet\\PUNEETSQL'
+database_name = 'ML Project Datasets'
 
 def read_sql_data():
     logging.info("Reading SQL database started")
@@ -36,7 +36,7 @@ def read_sql_data():
         df=pd.read_sql_query('Select * from walmart',conn)
         print(df.head())
 
-        return df
+        # return df
     
     except Exception as ex:
         raise CustomException(ex, sys)
